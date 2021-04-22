@@ -1,4 +1,4 @@
-package FirstProgram.Exercise_1_1;
+package FirstProgram._1_1;
 
 /*
     Упражнение 1.1
