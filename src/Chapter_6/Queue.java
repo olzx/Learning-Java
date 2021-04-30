@@ -7,7 +7,7 @@ package Chapter_6;
 
 class Queue {
     // Эти члены класса теперь являются закрытыми
-    private char q[]; //массив для хранения элементов очереди
+    private char q[]; // массив для хранения элементов очереди
     private int putloc, getloc; // индексы для вставки и извлечения элементов очереди
 
     Queue(int size) {
