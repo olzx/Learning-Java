@@ -1,0 +1,5 @@
+My new sring
+Hello World
+3
+4
+End file.

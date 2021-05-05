@@ -1,0 +1,4 @@
+[Start-file]
+-String-1.
+-String-2.
+[End-file]
