@@ -1,8 +1,4 @@
-package Chapter_11.myThread4;
-
-/*
-    Использование методов wait() и notify() для имитации часов
- */
+package Chapter_11.Questions.tickTock;
 
 class TickTock {
     String state;   // содержит сведения о состоянии часов
@@ -15,6 +11,12 @@ class TickTock {
         }
 
         System.out.print("Tick ");
+
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException exc) {
+            System.out.println("Прерывание потока.");
+        }
 
         state = "ticked"; // установить текущее состояние после такта "тик"
         notify(); // позволить выполняться методу tock()
@@ -37,6 +39,12 @@ class TickTock {
         }
 
         System.out.println("Tock");
+
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException exc) {
+            System.out.println("Прерывание потока.");
+        }
 
         state = "tocked"; // установить текущее состояние
                           // после такта "так"
@@ -74,16 +82,20 @@ class MyThread implements Runnable {
     // Точка входа для потока
     public void run() {
         if (thrd.getName().compareTo("Tick") == 0) {
-            for(int i = 0; i < 5; i++) ttOb.tick(true);
+            for(int i = 0; i < 5; i++) {
+                ttOb.tick(true);
+            }
             ttOb.tick(false);
         } else {
-            for(int i = 0; i < 5; i++) ttOb.tock(true);
+            for(int i = 0; i < 5; i++) {
+                ttOb.tock(true);
+            }
             ttOb.tock(false);
         }
     }
 }
 
-public class ThreadCom {
+public class TickTockMain {
     public static void main(String[] args) {
         TickTock tt = new TickTock();
         MyThread mt1 = MyThread.createAndStart("Tick", tt);

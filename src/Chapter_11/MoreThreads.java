@@ -6,6 +6,8 @@ package Chapter_11;
     Использование метода isAlive()
  */
 
+import Chapter_11.*;
+
 public class MoreThreads {
     public static void main(String[] args) {
         System.out.println("Запуск основного потока");
